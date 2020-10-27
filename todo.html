@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="todolist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Press+Start+2P&family=Rock+Salt&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e35e93db4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+       <div class="contain">
+        <h1>My To-Do List</h1>
+       <form>
+       <label for="newtodo"></label>    
+       <input type='text' onfocus="this.value=''" placeholder='New Todo' id="newtodo"> <button type="button">Enter</button>
+       </form>
+            <ul class="list" id='ul'>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Walk Yuna</li>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Code</li>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Workout</li>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Get oil changed</li>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Always t3ll Jessica i love her and how bomb dat ass is</li>
+            </ul>
+    
+            <div class="quotes">
+                <p id="quote">Push yourself, because no one else is going to do it for you.</p>
+            </div>
+        </div>
+</body>
+
+<footer>
+<p>Author: Charles Pine <br>
+<a href='mailto:charlespine22@gmail.com'>charlespine22@gmail.com</a></p>
+<i class="fab fa-instagram"></i> Mintyphreshh
+</footer>
+<script src="todolist.js"></script>
+</html>
