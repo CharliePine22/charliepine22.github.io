@@ -17,26 +17,32 @@ const motivationalQuotes = [
 'The key to success is to focus on goals, not obstacles.'
 ];
 
+//randomly loop through the quotes to decide which one displays.
 let randomQuote = Math.floor(Math.random() * motivationalQuotes.length)
 quote.textContent = motivationalQuotes[randomQuote];
 
 const tasks = [];
+//limit the todo list to 10 items, once it reaches 10, disable the submit button
+if(tasks.length == 10) {
+  button.disabled = true;
+}
+else {
+  button.disabled = false;
+}
+
 
 function addNewTodo() {
     let li = document.createElement('li');
     let inputValue = document.getElementById('newtodo').value;
-    let task = document.createTextNode(inputValue)
-    li.appendChild(task)
-    tasks.push(newtodo.value)
+    let task = document.createTextNode(inputValue);
+    li.appendChild(task);
+    tasks.push(newtodo.value);
 
     if (inputValue === '') {
         alert("You must write something!");
       } else {
         document.getElementById("ul").appendChild(li);
       }
-    if(tasks.length == 10) {
-
-    }
 }
 
 window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);

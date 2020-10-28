@@ -24,7 +24,7 @@ h1 {
 }
 
 input[type=text] {
-    width: 10%;
+    width: 15%;
     border: 2px solid black;
     padding: 3px 15px;
     margin: 5px 5px;
@@ -44,6 +44,7 @@ li {
     font-size: 12px;
     padding: 10px 0;
     font-family: 'Press Start 2P', cursive;
+    width: 95%;
 }
 
 li:nth-child(odd) {
