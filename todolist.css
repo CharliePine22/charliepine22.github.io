@@ -5,6 +5,13 @@ body {
     background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); 
 }
 
+button {
+    margin-left: 300px;
+    color: white;
+    background-color: red;
+    border: none;
+}
+
 footer {
     color: white;
     position: fixed;
@@ -41,10 +48,11 @@ input[type=text]:focus {
 li {
     list-style-type: none;
     /* background-color: rgb(206, 168, 255, 0.5);  */
-    font-size: 12px;
+    font-size: 15px;
     padding: 10px 0;
     font-family: 'Press Start 2P', cursive;
     width: 95%;
+    
 }
 
 li:nth-child(odd) {
@@ -56,11 +64,11 @@ li:nth-child(even) {
 }
 
 li:hover {
-    color: red;
-    cursor: text;
-    animation-name: changesize;
-    animation-duration: .2s;
-    
+
+    cursor: pointer;
+    /* animation-name: changesize;
+    animation-duration: .07s;
+*/
 }
 
 .contain {
@@ -76,6 +84,18 @@ li:hover {
     border: solid black 3px;
 }
 
+.delete{
+    background-color: #ff6161;
+    padding: 0px 3px 0px 3px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+.list-check {
+    text-decoration: line-through;
+    color: green;
+}
+
 span {
     padding-right: 10px;
     color: beige;
@@ -86,9 +106,6 @@ span:hover {
     cursor: pointer;
 }
 
-.onclick {
-    text-decoration: line-through;
-}
 
 .quotes {
     font-size: 20px;
@@ -100,8 +117,13 @@ span:hover {
     left: 25%
 }
 
+#submit {
+    margin: 0%;
+    color: white;
+    background-color: green;
+}
 
 @keyframes changesize {
     from {font-size: 12px;}
-    to {font-size: 30px;}
+    to {font-size: 20px;}
 }

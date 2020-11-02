@@ -2,7 +2,11 @@ const li = document.getElementsByClassName('item');
 const list = document.getElementsByClassName('list');
 const quote = document.querySelector('#quote');
 const newtodo = document.querySelector('#newtodo');
-const button = document.querySelector('button')
+const button = document.querySelector('#submit');
+const trash = document.querySelector('i');
+let count = document.getElementById('count');
+
+
 
 const motivationalQuotes = [
 'Your limitation—it’s only your imagination.',
@@ -20,7 +24,7 @@ const motivationalQuotes = [
 //randomly loop through the quotes to decide which one displays.
 let randomQuote = Math.floor(Math.random() * motivationalQuotes.length)
 quote.textContent = motivationalQuotes[randomQuote];
-
+totalItems = 0
 const tasks = [];
 //limit the todo list to 10 items, once it reaches 10, disable the submit button
 if(tasks.length == 10) {
@@ -30,23 +34,56 @@ else {
   button.disabled = false;
 }
 
-
 function addNewTodo() {
-    let li = document.createElement('li');
-    let inputValue = document.getElementById('newtodo').value;
-    let task = document.createTextNode(inputValue);
-    li.appendChild(task);
-    tasks.push(newtodo.value);
-
-    if (inputValue === '') {
-        alert("You must write something!");
-      } else {
-        document.getElementById("ul").appendChild(li);
-      }
+  //create a new list item
+  let li = document.createElement('li');
+  //grab the value from the form
+  let inputValue = document.getElementById('newtodo').value;
+  let task = document.createTextNode(inputValue);
+  //create a button to allow the removal of an item
+  let button = document.createElement('button');
+  button.innerHTML = 'Remove';
+  li.appendChild(task);
+  li.appendChild(button);
+  button.className = 'delete'
+  tasks.push(newtodo.value);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } 
+  else {
+    document.getElementById("ul").appendChild(li);
+    totalItems++;
+    } 
 }
 
+function deleteTodo(e) {
+  let remove = e.target.parentNode;
+  let parentNode = remove.parentNode;
+  parentNode.removeChild(remove);
+  // if(e.target.className == 'delete') deleteTodo(e);
+}
+
+document.getElementById('ul').addEventListener('click', function(e) {
+  if(e.target && e.target.nodeName ==='LI') {
+    e.target.classList.toggle('list-check');
+  }
+}) 
+
+document.getElementById('ul').addEventListener('click', function(e) {
+  if(e.target && e.target.className == 'delete') {
+    deleteTodo(e);
+  }
+})
+
+
+
+
+// parseInt(count).textContent = totalItems;
+
+//call on the window to deactivate the enter key in the input tag
 window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
 button.addEventListener('click', addNewTodo);
-
+trash.addEventListener('click', deleteTodo);
 
 //checkbox if important, label red and push to top of list.
+//calander view with date times

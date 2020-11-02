@@ -11,14 +11,16 @@
 <body>
        <div class="contain">
         <h1>My To-Do List</h1>
+        <h2>Current Number of Items: <span id="count"></span></h2>
        <form>
        <label for="newtodo"></label>    
-       <input type='text' onfocus="this.value=''" placeholder='New Todo' id="newtodo"> <button type="button">Enter</button>
+       <input type='text' onfocus="this.value=''" placeholder='New Todo' id="newtodo"> <button id="submit" type="button">Enter</button>
+    <input type="checkbox" name="important" id="important">
        </form>
             <ul class="list" id='ul'>
-                <li class="item"><span><i class="far fa-trash-alt"></i></span>Walk Yuna</li>
+                <!-- <li class="item"><span><i class="far fa-trash-alt"></i></span>Walk Yuna</li>
                 <li class="item"><span><i class="far fa-trash-alt"></i></span>Code</li>
-                <li class="item"><span><i class="far fa-trash-alt"></i></span>Workout</li>
+                <li class="item"><span><i class="far fa-trash-alt"></i></span>Workout</li> -->
             </ul>
     
             <div class="quotes">
